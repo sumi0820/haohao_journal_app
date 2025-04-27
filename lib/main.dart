@@ -58,8 +58,63 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Haohao Journal',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.light(
+          background: const Color(0xFFE8EBEF),
+          onBackground: const Color(0xFF57626A),
+          primary: const Color(0xFF57626A),
+          onPrimary: Colors.white,
+          secondary: const Color(0xFF57626A).withOpacity(0.7),
+          onSecondary: Colors.white,
+          surface: Colors.white,
+          onSurface: const Color(0xFF57626A),
+          surfaceVariant: const Color(0xFFE8EBEF).withOpacity(0.5),
+          onSurfaceVariant: const Color(0xFF57626A),
+        ),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFFE8EBEF),
+          foregroundColor: Color(0xFF57626A),
+          elevation: 0,
+        ),
+        cardTheme: CardTheme(
+          color: Colors.white,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF57626A),
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFF57626A),
+          foregroundColor: Colors.white,
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.white,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide.none,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: const BorderSide(
+              color: Color(0xFF57626A),
+              width: 2,
+            ),
+          ),
+        ),
       ),
       routerConfig: _router,
     );
