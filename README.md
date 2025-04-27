@@ -21,6 +21,7 @@ A self-growth support app that helps you "carefully record and nurture your dail
 - GoRouter (Routing)
 - Freezed (Data Models)
 - Material3 Design
+- OpenAPI Generator (API Client Generation)
 
 ## Development Setup
 
@@ -31,22 +32,60 @@ A self-growth support app that helps you "carefully record and nurture your dail
 brew install flutter
 ```
 
-2. Install Dependencies
+2. Install OpenAPI Generator
+
+```bash
+brew install openapi-generator
+```
+
+3. Install Dependencies
 
 ```bash
 flutter pub get
 ```
 
-3. Generate Code
+4. Generate Code
 
 ```bash
 flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
-4. Run the App
+5. Run the App
 
 ```bash
 flutter run
+```
+
+## Updating API Types
+
+To update the API client types when the server's OpenAPI specification changes:
+
+1. Ensure the server is running locally
+2. Generate the API client code:
+
+```bash
+# Generate API client from OpenAPI specification
+openapi-generator generate \
+  -i http://localhost:8080/v3/api-docs \
+  -g dart-dio \
+  -o lib/api
+```
+
+3. Update dependencies and regenerate code:
+
+```bash
+# Update dependencies
+flutter pub get
+
+# Regenerate code (including mocks for tests)
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+4. Run tests to ensure everything works:
+
+```bash
+# Run API tests
+flutter test test/api
 ```
 
 ## License
