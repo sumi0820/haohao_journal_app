@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **health**
-> Map<String, String> health()
+> BuiltMap<String, String> health()
 
 
 
@@ -21,12 +21,12 @@ Method | HTTP request | Description
 ```dart
 import 'package:openapi/api.dart';
 
-final api_instance = HealthCheckControllerApi();
+final api = Openapi().getHealthCheckControllerApi();
 
 try {
-    final result = api_instance.health();
-    print(result);
-} catch (e) {
+    final response = api.health();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling HealthCheckControllerApi->health: $e\n');
 }
 ```
@@ -36,7 +36,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map<String, String>**
+**BuiltMap&lt;String, String&gt;**
 
 ### Authorization
 

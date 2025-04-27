@@ -1,8 +1,8 @@
-# openapi.api.HealthCheckControllerApi
+# haohao_journal_api.api.HealthCheckControllerApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:haohao_journal_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost:8080*
@@ -13,20 +13,20 @@ Method | HTTP request | Description
 
 
 # **health**
-> Map<String, String> health()
+> BuiltMap<String, String> health()
 
 
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:haohao_journal_api/api.dart';
 
-final api_instance = HealthCheckControllerApi();
+final api = HaohaoJournalApi().getHealthCheckControllerApi();
 
 try {
-    final result = api_instance.health();
-    print(result);
-} catch (e) {
+    final response = api.health();
+    print(response);
+} catch on DioException (e) {
     print('Exception when calling HealthCheckControllerApi->health: $e\n');
 }
 ```
@@ -36,7 +36,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map<String, String>**
+**BuiltMap&lt;String, String&gt;**
 
 ### Authorization
 
