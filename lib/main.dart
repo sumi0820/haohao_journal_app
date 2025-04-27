@@ -7,8 +7,20 @@ import 'package:haohao_journal/screens/summary/summary_screen.dart';
 import 'package:haohao_journal/screens/task/task_create_screen.dart';
 import 'package:haohao_journal/screens/task/task_detail_screen.dart';
 import 'package:haohao_journal/screens/task/task_list_screen.dart';
+import 'package:dio/dio.dart';
+import 'package:haohao_journal_api/api/health_check_controller_api.dart';
 
 void main() {
+  // Initialize Dio client
+  final dio = Dio(BaseOptions(
+    baseUrl: 'http://localhost:8080',
+    connectTimeout: const Duration(seconds: 5),
+    receiveTimeout: const Duration(seconds: 3),
+  ));
+
+  // Initialize API client
+  final healthCheckApi = HealthCheckControllerApi(dio);
+
   runApp(
     const ProviderScope(
       child: MyApp(),
