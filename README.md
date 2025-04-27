@@ -1,16 +1,54 @@
-# haohao_journal
+# Haohao Journal
 
-A new Flutter project.
+A self-growth support app that helps you "carefully record and nurture your daily life." It manages tasks on a weekly basis (sprint) and facilitates daily and sprint-end reflections.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Sprint Management (automatically starts at Monday 00:00, ends at Sunday 23:59)
+- Task Registration & Management
+- Task List View (by Epic and by Planned Date)
+- Today's Task List
+- Overdue Task Warning
+- Daily Review
+- Sprint Review
+- Calendar View
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter 3.22+
+- Dart 3.x
+- Riverpod (State Management)
+- GoRouter (Routing)
+- Freezed (Data Models)
+- Material3 Design
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Development Setup
+
+1. Install Flutter SDK
+
+```bash
+# Install Flutter SDK
+brew install flutter
+```
+
+2. Install Dependencies
+
+```bash
+flutter pub get
+```
+
+3. Generate Code
+
+```bash
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+4. Run the App
+
+```bash
+flutter run
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
